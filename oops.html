@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OOP Exam Ready Answers – DCO-202</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; line-height: 1.7; }
+  .hero { background: #1a1a2e; padding: 2rem 2rem 1.5rem; border-bottom: 1px solid #2d2d50; }
+  .hero h1 { font-size: 1.8rem; color: #a78bfa; font-weight: 700; }
+  .hero p { color: #888; font-size: 0.9rem; margin-top: 0.3rem; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-left: 8px; vertical-align: middle; }
+  .badge-red { background: #3d1a1a; color: #f87171; }
+  .badge-yellow { background: #2d2200; color: #fbbf24; }
+  .badge-green { background: #0d2d1a; color: #4ade80; }
+  .toc { background: #161625; padding: 1rem 2rem; border-bottom: 1px solid #222; display: flex; flex-wrap: wrap; gap: 8px; }
+  .toc a { color: #a78bfa; font-size: 0.82rem; text-decoration: none; padding: 4px 12px; border: 1px solid #2d2d50; border-radius: 20px; transition: all 0.2s; }
+  .toc a:hover { background: #2d2d50; }
+  .container { max-width: 900px; margin: 0 auto; padding: 1.5rem 1.5rem 4rem; }
+  .section { margin-bottom: 2rem; border: 1px solid #222; border-radius: 12px; overflow: hidden; }
+  .section-header { background: #1a1a2e; padding: 1rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+  .section-header:hover { background: #20203a; }
+  .section-title { font-size: 1rem; font-weight: 600; color: #c4b5fd; }
+  .section-num { font-size: 0.8rem; color: #666; margin-right: 8px; }
+  .arrow { color: #666; font-size: 1.1rem; transition: transform 0.3s; }
+  .arrow.open { transform: rotate(90deg); }
+  .section-body { display: none; padding: 1.5rem; background: #111; }
+  .section-body.open { display: block; }
+  h3 { color: #a78bfa; font-size: 0.95rem; font-weight: 600; margin: 1.2rem 0 0.5rem; }
+  h3:first-child { margin-top: 0; }
+  p { font-size: 0.9rem; color: #ccc; margin-bottom: 0.6rem; }
+  .def { background: #1a1a2e; border-left: 3px solid #7c3aed; padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; margin: 0.5rem 0 1rem; font-size: 0.9rem; color: #d4d4f5; }
+  pre { background: #0a0a0a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 1rem; font-family: 'Consolas', 'Courier New', monospace; font-size: 0.82rem; color: #ccc; overflow-x: auto; margin: 0.8rem 0; line-height: 1.6; }
+  .kw { color: #c792ea; }
+  .cm { color: #546e7a; }
+  .fn { color: #82aaff; }
+  .str { color: #c3e88d; }
+  .num { color: #f78c6c; }
+  .ty { color: #ffcb6b; }
+  table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.85rem; }
+  th { background: #1a1a2e; color: #a78bfa; padding: 8px 12px; text-align: left; border: 1px solid #2d2d50; }
+  td { padding: 7px 12px; border: 1px solid #222; color: #ccc; }
+  tr:nth-child(even) td { background: #141414; }
+  .tip { background: #0d2d1a; border: 1px solid #166534; border-radius: 8px; padding: 0.7rem 1rem; margin: 0.8rem 0; font-size: 0.85rem; color: #4ade80; }
+  .tip::before { content: "💡 Exam Tip: "; font-weight: 600; }
+  ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+  li { font-size: 0.88rem; color: #ccc; margin-bottom: 0.3rem; }
+  .divider { border: none; border-top: 1px solid #222; margin: 1rem 0; }
+  .cat-label { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.4rem; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>OOP Exam Ready Answers <span class="badge badge-red">DCO-202</span></h1>
+  <p>Diploma in Computer Engineering – 2nd Year &nbsp;|&nbsp; Object Oriented Programming &nbsp;|&nbsp; All important topics covered</p>
+</div>
+
+<div class="toc">
+  <a href="#s1">OOP Features</a>
+  <a href="#s2">Reference Variables</a>
+  <a href="#s3">Inline Functions</a>
+  <a href="#s4">Access Specifiers</a>
+  <a href="#s5">Encapsulation</a>
+  <a href="#s6">Constructors</a>
+  <a href="#s7">Destructor</a>
+  <a href="#s8">Friend Functions</a>
+  <a href="#s9">Operator Overloading</a>
+  <a href="#s10">Inheritance</a>
+  <a href="#s11">Polymorphism</a>
+  <a href="#s12">Virtual Functions</a>
+  <a href="#s13">Exception Handling</a>
+  <a href="#s14">Static vs Dynamic Binding</a>
+  <a href="#s15">Structures vs Class</a>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">01</span><span class="section-title">OOP Features &amp; OOP vs POP <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data (objects) rather than functions and logic.</div>
+    <h3>4 Pillars of OOP</h3>
+    <ul>
+      <li><b>Encapsulation</b> – Wrapping data and functions together inside a class; hiding internal details.</li>
+      <li><b>Abstraction</b> – Showing only necessary features and hiding implementation details.</li>
+      <li><b>Inheritance</b> – A class (derived) acquiring properties of another class (base).</li>
+      <li><b>Polymorphism</b> – One function/operator behaving differently in different situations.</li>
+    </ul>
+    <h3>Other Features</h3>
+    <ul>
+      <li><b>Classes and Objects</b> – Class is a blueprint; Object is an instance.</li>
+      <li><b>Message Passing</b> – Objects communicate by calling each other's member functions.</li>
+      <li><b>Dynamic Binding</b> – Function call resolved at runtime using virtual functions.</li>
+    </ul>
+    <h3>OOP vs POP (Procedure-Oriented Programming)</h3>
+    <table>
+      <tr><th>Feature</th><th>POP</th><th>OOP</th></tr>
+      <tr><td>Focus</td><td>Functions/Procedures</td><td>Objects and Data</td></tr>
+      <tr><td>Data Security</td><td>Data is shared globally</td><td>Data is hidden (encapsulation)</td></tr>
+      <tr><td>Code Reuse</td><td>Less (via functions)</td><td>High (via inheritance)</td></tr>
+      <tr><td>Approach</td><td>Top-down</td><td>Bottom-up</td></tr>
+      <tr><td>Examples</td><td>C, Pascal, FORTRAN</td><td>C++, Java, Python</td></tr>
+      <tr><td>Modification</td><td>Difficult to modify</td><td>Easy using classes</td></tr>
+    </table>
+    <div class="tip">Write 4 features with one-line definitions, then the table. That's 10 marks.</div>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">02</span><span class="section-title">Reference Variables + Swap Program <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">A reference variable is an alias (alternate name) for an already existing variable. It refers to the same memory location as the original variable.</div>
+    <h3>Declaration Syntax</h3>
+    <pre><span class="ty">int</span> a = 10;
+<span class="ty">int</span> &amp;ref = a;  <span class="cm">// ref is a reference to a</span>
+ref = 20;      <span class="cm">// now a = 20 also</span></pre>
+    <h3>Properties of Reference Variables</h3>
+    <ul>
+      <li>Must be initialized at the time of declaration.</li>
+      <li>Cannot be re-assigned to refer to another variable.</li>
+      <li>No separate memory is allocated – same as original variable.</li>
+      <li>Used mainly in function parameters (call by reference).</li>
+    </ul>
+    <h3>Uses of Reference Variables</h3>
+    <ul>
+      <li>Passing large objects to functions without copying (efficient).</li>
+      <li>Returning multiple values from a function.</li>
+      <li>Operator overloading.</li>
+    </ul>
+    <h3>Swap Program Using Reference Variables</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="ty">void</span> <span class="fn">swap</span>(<span class="ty">int</span> &amp;x, <span class="ty">int</span> &amp;y) {
+    <span class="ty">int</span> temp = x;
+    x = y;
+    y = temp;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">int</span> a = 10, b = 20;
+    cout &lt;&lt; <span class="str">"Before: a="</span> &lt;&lt; a &lt;&lt; <span class="str">", b="</span> &lt;&lt; b &lt;&lt; endl;
+    <span class="fn">swap</span>(a, b);
+    cout &lt;&lt; <span class="str">"After: a="</span> &lt;&lt; a &lt;&lt; <span class="str">", b="</span> &lt;&lt; b &lt;&lt; endl;
+    <span class="kw">return</span> 0;
+}
+<span class="cm">// Output: Before: a=10, b=20
+//         After: a=20, b=10</span></pre>
+    <div class="tip">Dry run: before swap a=10,b=20 → after swap a=20,b=10. Write this in exam.</div>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">03</span><span class="section-title">Inline Functions <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">An inline function is a function that is expanded in line (at the call site) by the compiler at compile time, avoiding function call overhead.</div>
+    <h3>Syntax</h3>
+    <pre><span class="kw">inline</span> <span class="ty">int</span> <span class="fn">square</span>(<span class="ty">int</span> x) {
+    <span class="kw">return</span> x * x;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    cout &lt;&lt; <span class="fn">square</span>(5);  <span class="cm">// compiler replaces this with: 5*5</span>
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Advantages</h3>
+    <ul>
+      <li>Eliminates function call overhead (no stack push/pop).</li>
+      <li>Faster execution for small, frequently called functions.</li>
+      <li>Works like a macro but with type checking.</li>
+    </ul>
+    <h3>Disadvantages</h3>
+    <ul>
+      <li>Increases code size (code bloat) if function is large.</li>
+      <li>Not suitable for functions with loops, recursion, or switch.</li>
+      <li>Compiler may ignore inline request for complex functions.</li>
+    </ul>
+    <h3>Inline Function vs Preprocessor Macro</h3>
+    <table>
+      <tr><th>Inline Function</th><th>Macro (#define)</th></tr>
+      <tr><td>Processed by compiler</td><td>Processed by preprocessor</td></tr>
+      <tr><td>Type checking done</td><td>No type checking</td></tr>
+      <tr><td>Safer and more reliable</td><td>Prone to errors (side effects)</td></tr>
+      <tr><td>Defined using inline keyword</td><td>Defined using #define</td></tr>
+      <tr><td>Can be debugged</td><td>Cannot be debugged easily</td></tr>
+    </table>
+    <div class="tip">Always write the comparison table. It carries most of the marks for this question.</div>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">04</span><span class="section-title">Access Specifiers: private, public, protected <span class="badge badge-yellow">High Chance</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Access specifiers in C++ control the visibility and accessibility of class members (data and functions).</div>
+    <h3>Types</h3>
+    <ul>
+      <li><b>private</b> – Members accessible only within the same class. Default for class.</li>
+      <li><b>public</b> – Members accessible from anywhere (inside class, outside class, derived class).</li>
+      <li><b>protected</b> – Members accessible within the same class AND derived classes, but NOT outside.</li>
+    </ul>
+    <h3>Comparison Table</h3>
+    <table>
+      <tr><th>Location of Access</th><th>private</th><th>protected</th><th>public</th></tr>
+      <tr><td>Same class</td><td>✔ Yes</td><td>✔ Yes</td><td>✔ Yes</td></tr>
+      <tr><td>Derived class</td><td>✘ No</td><td>✔ Yes</td><td>✔ Yes</td></tr>
+      <tr><td>Outside class</td><td>✘ No</td><td>✘ No</td><td>✔ Yes</td></tr>
+    </table>
+    <h3>Example Program</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">Animal</span> {
+<span class="kw">private</span>:
+    <span class="ty">int</span> age = 5;        <span class="cm">// only inside Animal</span>
+<span class="kw">protected</span>:
+    <span class="ty">string</span> name = <span class="str">"Dog"</span>; <span class="cm">// Animal + derived classes</span>
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">show</span>() {
+        cout &lt;&lt; <span class="str">"Name: "</span> &lt;&lt; name &lt;&lt; <span class="str">", Age: "</span> &lt;&lt; age;
+    }
+};
+
+<span class="kw">class</span> <span class="ty">Dog</span> : <span class="kw">public</span> <span class="ty">Animal</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">display</span>() {
+        cout &lt;&lt; name;  <span class="cm">// OK: protected accessible in derived</span>
+        <span class="cm">// cout &lt;&lt; age; // ERROR: private not accessible</span>
+    }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Animal</span> a;
+    a.<span class="fn">show</span>();     <span class="cm">// OK: public</span>
+    <span class="cm">// a.age;    // ERROR: private</span>
+    <span class="cm">// a.name;   // ERROR: protected</span>
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Why use protected?</h3>
+    <p>When you want a member to be hidden from outside (like private) but still accessible to child classes (derived classes), you use protected. This is very useful in inheritance.</p>
+    <div class="tip">Draw the table in exam — it gets full marks in 2 minutes.</div>
+  </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">05</span><span class="section-title">Encapsulation &amp; Data Hiding <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Encapsulation is the mechanism of binding data (variables) and the functions that operate on that data together into a single unit called a class.</div>
+    <p>Data Hiding means keeping the internal data private so it cannot be accessed directly from outside the class. Access is provided only through public member functions (getters/setters).</p>
+    <h3>Example</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">BankAccount</span> {
+<span class="kw">private</span>:
+    <span class="ty">double</span> balance;        <span class="cm">// data hidden from outside</span>
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">setBalance</span>(<span class="ty">double</span> b) { balance = b; }
+    <span class="ty">double</span> <span class="fn">getBalance</span>()      { <span class="kw">return</span> balance; }
+    <span class="ty">void</span> <span class="fn">deposit</span>(<span class="ty">double</span> amt)  { balance += amt; }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">BankAccount</span> acc;
+    acc.<span class="fn">setBalance</span>(1000);
+    acc.<span class="fn">deposit</span>(500);
+    cout &lt;&lt; <span class="str">"Balance: "</span> &lt;&lt; acc.<span class="fn">getBalance</span>();
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Advantages</h3>
+    <ul>
+      <li>Protects data from accidental modification.</li>
+      <li>Increases code maintainability and flexibility.</li>
+      <li>Provides controlled access through getter/setter methods.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">06</span><span class="section-title">Constructors &amp; Copy Constructor <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">A Constructor is a special member function that is automatically called when an object is created. It has the same name as the class and no return type.</div>
+    <h3>Characteristics of Constructor</h3>
+    <ul>
+      <li>Same name as class.</li>
+      <li>No return type (not even void).</li>
+      <li>Called automatically when object is created.</li>
+      <li>Can be overloaded.</li>
+    </ul>
+    <h3>Types of Constructors</h3>
+    <ul>
+      <li><b>Default Constructor</b> – No parameters.</li>
+      <li><b>Parameterized Constructor</b> – Takes arguments to initialize members.</li>
+      <li><b>Copy Constructor</b> – Creates a new object as a copy of an existing object.</li>
+    </ul>
+    <h3>Example – All Three Types</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">Distance</span> {
+<span class="kw">private</span>:
+    <span class="ty">int</span> feet, inches;
+<span class="kw">public</span>:
+    <span class="cm">// Default Constructor</span>
+    <span class="ty">Distance</span>() { feet = 0; inches = 0; }
+
+    <span class="cm">// Parameterized Constructor</span>
+    <span class="ty">Distance</span>(<span class="ty">int</span> f, <span class="ty">int</span> i) { feet = f; inches = i; }
+
+    <span class="cm">// Copy Constructor</span>
+    <span class="ty">Distance</span>(<span class="ty">Distance</span> &amp;d) { feet = d.feet; inches = d.inches; }
+
+    <span class="ty">void</span> <span class="fn">show</span>() {
+        cout &lt;&lt; feet &lt;&lt; <span class="str">"ft "</span> &lt;&lt; inches &lt;&lt; <span class="str">"in"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Distance</span> d1;           <span class="cm">// Default</span>
+    <span class="ty">Distance</span> d2(5, 8);     <span class="cm">// Parameterized</span>
+    <span class="ty">Distance</span> d3(d2);       <span class="cm">// Copy</span>
+    d1.<span class="fn">show</span>(); d2.<span class="fn">show</span>(); d3.<span class="fn">show</span>();
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Do we need Default Constructor when Parameterized exists?</h3>
+    <p>YES — when you define a parameterized constructor, the compiler does NOT provide a default constructor automatically. So if you want to create objects without arguments, you must explicitly define the default constructor.</p>
+    <div class="tip">This is a frequently asked sub-question. Always answer it clearly.</div>
+  </div>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">07</span><span class="section-title">Constructor vs Destructor <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">A Destructor is a special member function called automatically when an object goes out of scope or is explicitly deleted. It cleans up resources.</div>
+    <h3>Comparison Table</h3>
+    <table>
+      <tr><th>Feature</th><th>Constructor</th><th>Destructor</th></tr>
+      <tr><td>Purpose</td><td>Initializes object</td><td>Destroys/cleans object</td></tr>
+      <tr><td>Name</td><td>Same as class</td><td>~ (tilde) + class name</td></tr>
+      <tr><td>Called when</td><td>Object is created</td><td>Object is destroyed</td></tr>
+      <tr><td>Parameters</td><td>Can have parameters</td><td>No parameters</td></tr>
+      <tr><td>Overloading</td><td>Can be overloaded</td><td>Cannot be overloaded</td></tr>
+      <tr><td>Return type</td><td>No return type</td><td>No return type</td></tr>
+      <tr><td>Number</td><td>Multiple allowed</td><td>Only one per class</td></tr>
+    </table>
+    <h3>Example</h3>
+    <pre><span class="kw">class</span> <span class="ty">Demo</span> {
+<span class="kw">public</span>:
+    <span class="ty">Demo</span>()  { cout &lt;&lt; <span class="str">"Constructor called"</span> &lt;&lt; endl; }
+    ~<span class="ty">Demo</span>() { cout &lt;&lt; <span class="str">"Destructor called"</span> &lt;&lt; endl; }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Demo</span> obj;  <span class="cm">// Constructor called here</span>
+    <span class="kw">return</span> 0;  <span class="cm">// Destructor called automatically here</span>
+}</pre>
+  </div>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">08</span><span class="section-title">Friend Functions <span class="badge badge-red">Every Year (2024, 2025)</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">A friend function is a function that is not a member of a class but has access to the private and protected members of that class. It is declared using the keyword friend inside the class.</div>
+    <h3>Characteristics</h3>
+    <ul>
+      <li>Not a member of the class but declared inside it.</li>
+      <li>Can access private and protected members.</li>
+      <li>Called without using an object (no dot operator).</li>
+      <li>Cannot be called using object.function() syntax.</li>
+    </ul>
+    <h3>Friend Function in Two Classes</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">ClassB</span>;  <span class="cm">// forward declaration</span>
+
+<span class="kw">class</span> <span class="ty">ClassA</span> {
+<span class="kw">private</span>:
+    <span class="ty">int</span> a = 10;
+<span class="kw">public</span>:
+    <span class="kw">friend void</span> <span class="fn">show</span>(<span class="ty">ClassA</span>, <span class="ty">ClassB</span>);
+};
+
+<span class="kw">class</span> <span class="ty">ClassB</span> {
+<span class="kw">private</span>:
+    <span class="ty">int</span> b = 20;
+<span class="kw">public</span>:
+    <span class="kw">friend void</span> <span class="fn">show</span>(<span class="ty">ClassA</span>, <span class="ty">ClassB</span>);
+};
+
+<span class="cm">// friend function – not a member of either class</span>
+<span class="ty">void</span> <span class="fn">show</span>(<span class="ty">ClassA</span> obj1, <span class="ty">ClassB</span> obj2) {
+    cout &lt;&lt; <span class="str">"A = "</span> &lt;&lt; obj1.a &lt;&lt; endl;
+    cout &lt;&lt; <span class="str">"B = "</span> &lt;&lt; obj2.b &lt;&lt; endl;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">ClassA</span> a;
+    <span class="ty">ClassB</span> b;
+    <span class="fn">show</span>(a, b);
+    <span class="kw">return</span> 0;
+}</pre>
+    <div class="tip">Always include forward declaration (class ClassB;) at the top. Examiners check for this.</div>
+  </div>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">09</span><span class="section-title">Operator Overloading <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Operator overloading allows C++ operators to be redefined to work with user-defined data types (classes). The keyword used is operator.</div>
+    <h3>Rules of Operator Overloading</h3>
+    <ul>
+      <li>Only existing operators can be overloaded; new ones cannot be created.</li>
+      <li>Arity (number of operands) of operator cannot be changed.</li>
+      <li>At least one operand must be a user-defined type.</li>
+      <li>Precedence and associativity of operators cannot be changed.</li>
+      <li>Overloaded using keyword <b>operator</b>.</li>
+    </ul>
+    <h3>Operators that CANNOT be Overloaded</h3>
+    <p>:: (scope resolution) &nbsp;|&nbsp; . (dot) &nbsp;|&nbsp; .* (pointer-to-member) &nbsp;|&nbsp; ?: (ternary) &nbsp;|&nbsp; sizeof</p>
+    <h3>Binary Operator Overloading (+)</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">Complex</span> {
+<span class="kw">public</span>:
+    <span class="ty">int</span> real, imag;
+    <span class="ty">Complex</span>(<span class="ty">int</span> r=0, <span class="ty">int</span> i=0) { real=r; imag=i; }
+
+    <span class="cm">// Overloading + operator</span>
+    <span class="ty">Complex</span> <span class="kw">operator</span>+(<span class="ty">Complex</span> c) {
+        <span class="kw">return</span> <span class="ty">Complex</span>(real + c.real, imag + c.imag);
+    }
+
+    <span class="ty">void</span> <span class="fn">show</span>() {
+        cout &lt;&lt; real &lt;&lt; <span class="str">" + "</span> &lt;&lt; imag &lt;&lt; <span class="str">"i"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Complex</span> c1(3, 4), c2(1, 2);
+    <span class="ty">Complex</span> c3 = c1 + c2;  <span class="cm">// calls operator+</span>
+    c3.<span class="fn">show</span>();             <span class="cm">// Output: 4 + 6i</span>
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Unary Operator Overloading (++)</h3>
+    <pre><span class="ty">Complex</span> <span class="kw">operator</span>++() {
+    real++;  imag++;
+    <span class="kw">return</span> *<span class="kw">this</span>;
+}</pre>
+    <div class="tip">Always mention which operators cannot be overloaded — examiners frequently ask this.</div>
+  </div>
+</div>
+
+<!-- SECTION 10 -->
+<div class="section" id="s10">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">10</span><span class="section-title">Inheritance – All Types <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Inheritance is the mechanism by which a new class (derived/child class) acquires properties and behaviors of an existing class (base/parent class).</div>
+    <h3>Advantages</h3>
+    <ul>
+      <li>Code reusability – no need to rewrite existing code.</li>
+      <li>Reduces redundancy.</li>
+      <li>Supports polymorphism.</li>
+      <li>Easy to extend functionality.</li>
+    </ul>
+    <h3>Types of Inheritance</h3>
+    <table>
+      <tr><th>Type</th><th>Description</th><th>Syntax</th></tr>
+      <tr><td>Single</td><td>One derived from one base</td><td>class B : public A</td></tr>
+      <tr><td>Multiple</td><td>One derived from multiple bases</td><td>class C : public A, public B</td></tr>
+      <tr><td>Multilevel</td><td>Chain: A → B → C</td><td>class C : public B</td></tr>
+      <tr><td>Hierarchical</td><td>Multiple derived from one base</td><td>class B : public A; class C : public A</td></tr>
+      <tr><td>Hybrid</td><td>Combination of above types</td><td>Combination</td></tr>
+    </table>
+    <h3>public vs private Derived Class</h3>
+    <table>
+      <tr><th>Base member</th><th>public inheritance</th><th>private inheritance</th></tr>
+      <tr><td>public</td><td>public in derived</td><td>private in derived</td></tr>
+      <tr><td>protected</td><td>protected in derived</td><td>private in derived</td></tr>
+      <tr><td>private</td><td>not accessible</td><td>not accessible</td></tr>
+    </table>
+    <h3>Example – Single Inheritance</h3>
+    <pre><span class="kw">class</span> <span class="ty">Animal</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">eat</span>() { cout &lt;&lt; <span class="str">"Eating"</span> &lt;&lt; endl; }
+};
+
+<span class="kw">class</span> <span class="ty">Dog</span> : <span class="kw">public</span> <span class="ty">Animal</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">bark</span>() { cout &lt;&lt; <span class="str">"Barking"</span> &lt;&lt; endl; }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Dog</span> d;
+    d.<span class="fn">eat</span>();   <span class="cm">// inherited from Animal</span>
+    d.<span class="fn">bark</span>();  <span class="cm">// Dog's own function</span>
+}</pre>
+  </div>
+</div>
+
+<!-- SECTION 11 -->
+<div class="section" id="s11">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">11</span><span class="section-title">Polymorphism <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Polymorphism means "many forms." In C++, it allows functions or operators to behave differently based on the context (object or arguments).</div>
+    <h3>Types of Polymorphism</h3>
+    <ul>
+      <li><b>Compile-time (Static) Polymorphism</b> – Resolved at compile time.
+        <ul>
+          <li>Function Overloading</li>
+          <li>Operator Overloading</li>
+        </ul>
+      </li>
+      <li><b>Runtime (Dynamic) Polymorphism</b> – Resolved at runtime.
+        <ul>
+          <li>Virtual Functions (with inheritance)</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Function Overloading Example</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">Area</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">calculate</span>(<span class="ty">float</span> r) {
+        cout &lt;&lt; <span class="str">"Circle area: "</span> &lt;&lt; 3.14 * r * r &lt;&lt; endl;
+    }
+    <span class="ty">void</span> <span class="fn">calculate</span>(<span class="ty">float</span> l, <span class="ty">float</span> b) {
+        cout &lt;&lt; <span class="str">"Rectangle area: "</span> &lt;&lt; l * b &lt;&lt; endl;
+    }
+    <span class="ty">void</span> <span class="fn">calculate</span>(<span class="ty">float</span> b, <span class="ty">float</span> h, <span class="ty">int</span>) {
+        cout &lt;&lt; <span class="str">"Triangle area: "</span> &lt;&lt; 0.5 * b * h &lt;&lt; endl;
+    }
+};</pre>
+    <div class="tip">Polymorphism = compile-time + runtime. Always name both types with examples.</div>
+  </div>
+</div>
+
+<!-- SECTION 12 -->
+<div class="section" id="s12">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">12</span><span class="section-title">Virtual Functions <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">A virtual function is a member function in the base class that can be overridden in a derived class. It enables runtime polymorphism. Declared using the keyword virtual.</div>
+    <h3>Why Virtual Functions are Essential</h3>
+    <p>Without virtual functions, if you call a function using a base class pointer, the base class version is always called (static binding). With virtual, the correct derived class version is called at runtime (dynamic binding).</p>
+    <h3>Complete Program</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="kw">class</span> <span class="ty">Shape</span> {
+<span class="kw">public</span>:
+    <span class="kw">virtual void</span> <span class="fn">draw</span>() {    <span class="cm">// virtual function</span>
+        cout &lt;&lt; <span class="str">"Drawing Shape"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="kw">class</span> <span class="ty">Circle</span> : <span class="kw">public</span> <span class="ty">Shape</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">draw</span>() <span class="kw">override</span> {
+        cout &lt;&lt; <span class="str">"Drawing Circle"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="kw">class</span> <span class="ty">Rectangle</span> : <span class="kw">public</span> <span class="ty">Shape</span> {
+<span class="kw">public</span>:
+    <span class="ty">void</span> <span class="fn">draw</span>() <span class="kw">override</span> {
+        cout &lt;&lt; <span class="str">"Drawing Rectangle"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Shape</span> *ptr;            <span class="cm">// base class pointer</span>
+
+    <span class="ty">Circle</span> c;
+    ptr = &amp;c;
+    ptr-&gt;<span class="fn">draw</span>();           <span class="cm">// Output: Drawing Circle (runtime!)</span>
+
+    <span class="ty">Rectangle</span> r;
+    ptr = &amp;r;
+    ptr-&gt;<span class="fn">draw</span>();           <span class="cm">// Output: Drawing Rectangle</span>
+
+    <span class="kw">return</span> 0;
+}</pre>
+    <h3>Pure Virtual Function (Abstract Class)</h3>
+    <pre><span class="kw">virtual void</span> <span class="fn">draw</span>() = 0;  <span class="cm">// pure virtual – class becomes abstract</span></pre>
+    <p>A class with at least one pure virtual function is called an <b>abstract class</b>. Objects of abstract class cannot be created.</p>
+    <div class="tip">Use a base class pointer in the demo — that's the whole point of virtual functions. Examiners check for this.</div>
+  </div>
+</div>
+
+<!-- SECTION 13 -->
+<div class="section" id="s13">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">13</span><span class="section-title">Exception Handling <span class="badge badge-red">Every Year</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Exception handling is a mechanism to handle runtime errors (exceptions) so that the program does not crash. C++ uses three keywords: try, catch, and throw.</div>
+    <h3>Keywords</h3>
+    <ul>
+      <li><b>try</b> – Block of code that might throw an exception.</li>
+      <li><b>throw</b> – Used to throw an exception when an error occurs.</li>
+      <li><b>catch</b> – Block that catches and handles the exception.</li>
+    </ul>
+    <h3>Advantages</h3>
+    <ul>
+      <li>Separates error-handling code from normal code.</li>
+      <li>Prevents program from crashing on runtime errors.</li>
+      <li>Multiple exceptions can be handled with multiple catch blocks.</li>
+      <li>Makes code more readable and maintainable.</li>
+    </ul>
+    <h3>Example Program</h3>
+    <pre><span class="kw">#include</span>&lt;iostream&gt;
+<span class="kw">using namespace</span> std;
+
+<span class="ty">int</span> <span class="fn">divide</span>(<span class="ty">int</span> a, <span class="ty">int</span> b) {
+    <span class="kw">if</span> (b == 0)
+        <span class="kw">throw</span> <span class="str">"Division by zero!"</span>;  <span class="cm">// throw exception</span>
+    <span class="kw">return</span> a / b;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="kw">try</span> {
+        cout &lt;&lt; <span class="fn">divide</span>(10, 2) &lt;&lt; endl;   <span class="cm">// OK: outputs 5</span>
+        cout &lt;&lt; <span class="fn">divide</span>(10, 0) &lt;&lt; endl;   <span class="cm">// throws exception</span>
+    }
+    <span class="kw">catch</span> (<span class="kw">const char</span> *msg) {
+        cout &lt;&lt; <span class="str">"Error: "</span> &lt;&lt; msg &lt;&lt; endl;
+    }
+    <span class="kw">return</span> 0;
+}
+<span class="cm">// Output: 5
+//         Error: Division by zero!</span></pre>
+    <h3>Multiple Catch Blocks</h3>
+    <pre><span class="kw">try</span> { <span class="kw">throw</span> 10; }
+<span class="kw">catch</span>(<span class="ty">int</span> e)    { cout &lt;&lt; <span class="str">"Int exception: "</span>    &lt;&lt; e; }
+<span class="kw">catch</span>(<span class="ty">double</span> e) { cout &lt;&lt; <span class="str">"Double exception: "</span> &lt;&lt; e; }
+<span class="kw">catch</span>(...)      { cout &lt;&lt; <span class="str">"Unknown exception"</span>; }</pre>
+  </div>
+</div>
+
+<!-- SECTION 14 -->
+<div class="section" id="s14">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">14</span><span class="section-title">Static Binding vs Dynamic Binding <span class="badge badge-yellow">High Chance</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Binding refers to linking a function call to the function body. It can happen at compile-time (static) or runtime (dynamic).</div>
+    <table>
+      <tr><th>Feature</th><th>Static Binding (Early)</th><th>Dynamic Binding (Late)</th></tr>
+      <tr><td>When resolved</td><td>Compile time</td><td>Runtime</td></tr>
+      <tr><td>Also called</td><td>Early binding</td><td>Late binding</td></tr>
+      <tr><td>Used with</td><td>Normal functions, overloading</td><td>Virtual functions</td></tr>
+      <tr><td>Flexibility</td><td>Less flexible</td><td>More flexible</td></tr>
+      <tr><td>Speed</td><td>Faster</td><td>Slightly slower</td></tr>
+      <tr><td>Polymorphism</td><td>Compile-time</td><td>Runtime</td></tr>
+    </table>
+    <h3>Late Binding Example</h3>
+    <pre><span class="ty">Shape</span> *ptr = <span class="kw">new</span> <span class="ty">Circle</span>();
+ptr-&gt;<span class="fn">draw</span>();  <span class="cm">// resolved at runtime → calls Circle::draw()</span></pre>
+    <p>This is late binding — the exact function to call is decided at runtime based on the actual object type pointed to by ptr.</p>
+  </div>
+</div>
+
+<!-- SECTION 15 -->
+<div class="section" id="s15">
+  <div class="section-header" onclick="toggle(this)">
+    <span><span class="section-num">15</span><span class="section-title">Structure vs Class in C++ <span class="badge badge-yellow">High Chance</span></span></span>
+    <span class="arrow">▶</span>
+  </div>
+  <div class="section-body">
+    <div class="def">Both struct and class are used to define user-defined data types. The main difference is the default access specifier.</div>
+    <table>
+      <tr><th>Feature</th><th>Structure (struct)</th><th>Class</th></tr>
+      <tr><td>Default access</td><td>public</td><td>private</td></tr>
+      <tr><td>Data hiding</td><td>Not by default</td><td>Yes (by default)</td></tr>
+      <tr><td>Inheritance</td><td>Supported</td><td>Supported</td></tr>
+      <tr><td>Member functions</td><td>Can have</td><td>Can have</td></tr>
+      <tr><td>Used for</td><td>Simple data grouping</td><td>Complex OOP design</td></tr>
+    </table>
+    <h3>Example – Structure in C++</h3>
+    <pre><span class="kw">struct</span> <span class="ty">Student</span> {
+    <span class="ty">int</span> rollno;      <span class="cm">// public by default</span>
+    <span class="ty">string</span> name;
+    <span class="ty">void</span> <span class="fn">show</span>() { cout &lt;&lt; rollno &lt;&lt; <span class="str">" "</span> &lt;&lt; name; }
+};
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="ty">Student</span> s;
+    s.rollno = 1;
+    s.name = <span class="str">"Ali"</span>;
+    s.<span class="fn">show</span>();
+}</pre>
+    <p>Structures are called <b>heterogeneous data types</b> because they can group variables of different data types under one name.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.arrow');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arrow.classList.toggle('open', !isOpen);
+}
+document.querySelectorAll('.section-header')[0].click();
+</script>
+</body>
+</html>
